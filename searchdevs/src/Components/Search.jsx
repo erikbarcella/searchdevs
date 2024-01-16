@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function FormPropsTextFields() {
+const Search = ({ onChange }) => {
   return (
     <Box
     component="form"
@@ -19,6 +19,7 @@ export default function FormPropsTextFields() {
         id="outlined-search" 
         label="Search" 
         type="search"
+        onChange={onChange}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
@@ -31,3 +32,5 @@ export default function FormPropsTextFields() {
   </Box>
   );
 }
+
+export default Search;
