@@ -15,7 +15,7 @@ export function Home() {
                 try {
                     const response = await axios.get(`https://api.github.com/users/${searchTerm}/repos`)
                     if(response && response.data && response.status === 200) {
-                        navigate('/perfil', { state: { user: res.data, repos: response.data } });
+                        navigate('/perfil', { state: { user: res.data, repos: response.data, searchTerm } });
                     }
                 } catch (error) {
                     console.log(error);
