@@ -4,13 +4,13 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 
-const Search = ({ onChange , value, onEnter, onSearch}) => {
+const Search = ({ onChange , value, onEnter, onSearch, placeholder}) => {
 
-  const handleKeyPress = (event) => {
+  /* const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
         onEnter();
     }
-};
+}; */
   return (
     <Box
     component="form"
@@ -27,7 +27,8 @@ const Search = ({ onChange , value, onEnter, onSearch}) => {
         type="search"
         value={value}
         onChange={onChange}
-        onKeyPress={handleKeyPress}
+        // onKeyPress={onEnter}
+        placeholder={placeholder}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">

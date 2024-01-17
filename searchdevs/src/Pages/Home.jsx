@@ -30,7 +30,7 @@ export function Home() {
         <div className='home'> 
             <h1><span className="search-color">Search </span><span className="devs-color">d_evs</span></h1>
             <Search onChange={e => setSearchTerm(e.target.value)}/>
-            <button onClick={handleSearch}>Search</button>
+            <button onClick={handleSearch} >Search</button>
         </div>
     )
 }
