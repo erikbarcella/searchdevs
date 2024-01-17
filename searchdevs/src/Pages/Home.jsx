@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Search from '../Components/Search'
+import SearchButton from '../Components/SearchButton'
 import axios from 'axios';
 import './Perfil'
 
@@ -28,9 +29,11 @@ export function Home() {
 
     return (
         <div className='home'>
-            <h1><span className="search-color">Search </span><span className="devs-color">d_evs</span></h1>
-            <Search onChange={e => setSearchTerm(e.target.value)} />
-            <button onClick={handleSearch} >Search</button>
+            <p className='searchdevs'><span className="search-color">Search </span><span className="devs-color">d_evs</span></p>
+            <div style={{ display: 'flex', alignItems: 'center' }}> 
+                <Search onChange={e => setSearchTerm(e.target.value)} width={'50ch'} height={'1ch'}/>
+                <SearchButton onClick={handleSearch} text={'Search'}/>
+            </div>
         </div>
     )
 }

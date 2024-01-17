@@ -6,7 +6,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 100;
   font-style: normal;
-  font-size: 16px;
+  /* font-size: 16px; */
   /* display: flex;
   align-items: center;
   justify-content: center; */
@@ -52,13 +52,53 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Isso fará com que o elemento ocupe toda a altura da tela */
+  height: 100vh; 
 }
 
 .search-color {
   color: #066dcc;
+  font-size: 4rem;
+  font-weight: 400;
 }
 
 .devs-color {
   color: #8c1cd4;
+  font-size: 4rem;
+  font-weight: 400;
 }
+
+.searchbutton{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #8c1cd4;
+  color: #fff;
+  padding: 13px 45px;
+  border-radius: 5px;
+  border: none;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.resultinfos > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.resultuserinfos,
+.resultreposinfos {
+  width: 400px; /* Adjust as needed */
+  margin-bottom: 15px;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .resultuserinfos,
+  .resultreposinfos {
+    width: 100%;
+  }
+}
+
+
+
+
+

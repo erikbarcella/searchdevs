@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 
-const Search = ({ onChange , value, onEnter, onSearch, placeholder}) => {
+const Search = ({ onChange , value, onEnter, onSearch, placeholder, width, height,border}) => {
 
   /* const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
@@ -15,7 +15,22 @@ const Search = ({ onChange , value, onEnter, onSearch, placeholder}) => {
     <Box
     component="form"
     sx={{
-      '& .MuiTextField-root': { m: 1, width: '50ch' },
+      '& .MuiTextField-root': {
+        m: 1,
+        width: width,
+        '& input': {
+          height: height,
+          '&:hover': {
+            borderColor: border,
+          },
+          '&:focus': {
+            borderColor: border,  // Altere para a cor desejada quando o input estiver selecionado
+          },
+        },
+        '& .MuiOutlinedInput-notchedOutline': {
+          borderColor: border,  // ou a cor padrão desejada
+        },
+      },
     }}
     noValidate
     autoComplete="off"
