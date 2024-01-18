@@ -1,6 +1,7 @@
 ### library de componentes utilizada
 Material Design
 
+Para executar o projeto é necessario ter o gerenciador de pacotes npm instalado 
 No diretorio do projeto, você pode executar os seguintes comandos:
 
 ### `npm install`
