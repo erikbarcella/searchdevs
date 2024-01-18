@@ -16,5 +16,8 @@ Para instalar nosso servidor
 ### `serve -s build`
 Após para servir os arquivos da pasta build e executar o projeto, basta apenas rodar o comando 
 
+###Projeto hospedado na netlify , teste em: 
+###https://githubsearchdevs.netlify.app
+
 
 
