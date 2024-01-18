@@ -19,8 +19,11 @@ export function Perfil() {
     const [localSearchTerm, setLocalSearchTerm] = useState('');
     const [searchRepos, setSearchRepos] = useState([]);
     const [searchUsers, setSearchUser] = useState('');
+    const [showAlert, setShowAlert] = useState(false); 
     const navigate = useNavigate();
+
     const handleSearch = useCallback(async () => {
+        // setShowAlert(false);
         try {
             const res = await axios.get(`https://api.github.com/users/${searchTerm}`)
             if (res && res.data && res.status === 200) {
@@ -35,12 +38,17 @@ export function Perfil() {
                 }
             }
         } catch (error) {
-            alert('Usuário não encontrado');
+            if (!showAlert) {
+                window.alert('Usuário não encontrado'); // Exibe um alerta pop-up
+                setShowAlert(true);
+            }
             console.log(error);
         }
-    }, [searchTerm]);
+    }, [searchTerm, showAlert]);
+    // }, [searchTerm]);
 
     const handleClick = async () => {
+        setShowAlert(false);
         await handleSearch();
         navigate(location.pathname, { state: { user, repos, searchTerm: localSearchTerm } });
     };
@@ -92,10 +100,10 @@ export function Perfil() {
                             </div>
                             <div className='userview'>
                                 <p style={{ fontWeight: 'bold' }}>{searchUsers.name}</p>
-                                <p style={{ color: '6c7484', fontWeight: '400' }}>@{searchUsers.login}</p>
+                                <p style={{ color: '#6c7484', fontWeight: '400' }}>@{searchUsers.login}</p>
                             </div>
                         </div>
-                        <div className='userinfos' style={{ color: '6c7484', fontWeight: '400' }}>
+                        <div className='userinfos' style={{ color: '#6c7484', fontWeight: '400' }}>
                             {searchUsers.bio ? <p style={{ fontSize: 'small', width: '14vw' }}>{searchUsers.bio}</p> : ''}
 
                             {searchUsers.followers ? <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -146,17 +154,17 @@ export function Perfil() {
                                 .map((searchRepo) => (
                                     <div key={searchRepo.id} className="repository-box">
                                         <strong><a style={{ textDecoration: 'none', color: 'inherit' }} href={searchRepo.html_url}>  {searchRepo.name} </a></strong>
-                                        <p>{searchRepo.description}</p>
+                                        <p style={{ color: '#6c7484', fontWeight: '400' }}>{searchRepo.description}</p>
                                         <div style={{ display: 'flex', alignItems: 'center' }}>
                                             <StarBorderIcon fontSize='small' />
                                             <p style={{ marginLeft: '1vh' }}>{searchRepo.stargazers_count}</p>
                                         </div>
-                                        <p>Atualizado há {
+                                        <p style={{ color: '#6c7484', fontWeight: '400' }}>Atualizado há {
                                             Math.ceil(
                                                 (new Date() - new Date(searchRepo.updated_at)) / (1000 * 60 * 60 * 24)
                                             )
                                         } dias</p>
-                                        <p>Linguagem: {searchRepo.language}</p>
+                                        <p style={{ color: '#6c7484', fontWeight: '400' }}>Linguagem: {searchRepo.language}</p>
                                     </div>
                                 ))}
                         </div>
@@ -173,12 +181,12 @@ export function Perfil() {
                             <div className='avatarview'>
                                 <Avatar src={user.avatar_url} />
                             </div>
-                            <div className='userview'>
+                            <div className='userview' >
                                 <p style={{ fontWeight: 'bold' }}>{user.name}</p>
-                                <p style={{ color: '6c7484', fontWeight: '400' }}>@{user.login}</p>
+                                <p style={{ color: '#6c7484', fontWeight: '400' }}>@{user.login}</p>
                             </div>
                         </div>
-                        <div className='userinfos' style={{ color: '6c7484', fontWeight: '400' }}>
+                        <div className='userinfos' style={{ color: '#6c7484', fontWeight: '400' }}>
                             {user.bio ? <p style={{ fontSize: 'small', width: '14vw' }}>{user.bio}</p> : ''}
 
                             {user.followers ? <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -230,14 +238,17 @@ export function Perfil() {
                                 .map((repo) => (
                                     <div key={repo.id} className="repository-box">
                                         <strong><a style={{ textDecoration: 'none', color: 'inherit' }} href={repo.html_url}>  {repo.name} </a></strong>
-                                        <p>{repo.description}</p>
+                                        <p  style={{ color: '#6c7484', fontWeight: '400' }}>{repo.description}</p>
                                         <div style={{ display: 'flex', alignItems: 'center' }}>
                                             <StarBorderIcon fontSize='small' />
                                             <p style={{ marginLeft: '1vh' }}>{repo.stargazers_count}</p>
                                         </div>
-                                        <p>Stars: {repo.stargazers_count}</p>
-                                        <p>Last Updated: {repo.updated_at}</p>
-                                        <p>Linguagem: {repo.language}</p>
+                                        <p  style={{ color: '#6c7484', fontWeight: '400' }} >Atualizado há {
+                                            Math.ceil(
+                                                (new Date() - new Date(repo.updated_at)) / (1000 * 60 * 60 * 24)
+                                            )
+                                        } dias</p>
+                                        <p  style={{ color: '#6c7484', fontWeight: '400' }}>Linguagem: {repo.language}</p>
                                     </div>
                                 ))}
                         </div>
