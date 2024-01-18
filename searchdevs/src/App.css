@@ -6,10 +6,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 100;
   font-style: normal;
-  /* font-size: 16px; */
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 
 .App-logo {
@@ -74,7 +70,6 @@ body {
   color: #fff;
   border-radius: 5px;
   border: none;
-  /* margin-left: 15px; */
   cursor: pointer;
 }
 
@@ -85,7 +80,7 @@ body {
 
 .resultuserinfos,
 .resultreposinfos {
-  width: 400px; /* Adjust as needed */
+  width: 400px; 
   margin-bottom: 15px;
   word-wrap: break-word;
 }
@@ -96,6 +91,40 @@ body {
     width: 100%;
   }
 }
+
+.profileview {
+  display: flex;
+  align-items: center;
+}
+
+.avatarview {
+  margin-right: 16px;
+}
+
+.userview p {
+  margin: 4px 0; 
+}
+
+.userinfos p {
+  margin: 1vh 0;
+}
+.repositories-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.repository-box {
+  border: none; /* Remover a borda */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Adicionar sombra para destacar as caixas */
+}
+
+.repository-box strong {
+  font-weight: bold;
+}
+
 
 
 

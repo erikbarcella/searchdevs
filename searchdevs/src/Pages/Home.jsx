@@ -12,6 +12,7 @@ export function Home() {
     const handleSearch = async () => {
         try {
             const res = await axios.get(`https://api.github.com/users/${searchTerm}`)
+            
             if (res && res.data && res.status === 200) {
                 try {
                     const response = await axios.get(`https://api.github.com/users/${searchTerm}/repos`)
@@ -23,6 +24,7 @@ export function Home() {
                 }
             }
         } catch (error) {
+            alert('Usuário não encontrado');
             console.log(error);
         }
     };
