@@ -141,8 +141,8 @@ export function Perfil() {
                         </div>
 
                         {searchUsers.blog ?
-                            <SearchButton onClick={() => navigate(`/${searchUsers.blog}`)} text={'Contato'}
-                                style={{ padding: '2vh 9vw' }} /> : ''
+                            <SearchButton onClick={() => window.open(searchUsers.blog, '_blank')} text={'Contato'} style={{ padding: '2vh 9vw' }} /> 
+                            : ''
                         }
                     </div>
 
@@ -224,8 +224,8 @@ export function Perfil() {
                         </div>
 
                         {user.blog ?
-                            <SearchButton onClick={() => navigate(`/${user.blog}`)} text={'Contato'}
-                                style={{ padding: '2vh 9vw' }} /> : ''
+                            <SearchButton onClick={() => window.open(user.blog, '_blank')} text={'Contato'} style={{ padding: '2vh 9vw' }} /> 
+                            : ''
                         }
 
                     </div>
