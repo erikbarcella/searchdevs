@@ -1,3 +1,6 @@
+### library de componentes utilizada
+Material Design
+
 No diretorio do projeto, você pode executar os seguintes comandos:
 
 ### `npm install`
