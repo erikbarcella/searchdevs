@@ -32,7 +32,7 @@ export function Home() {
             <p className='searchdevs'><span className="search-color">Search </span><span className="devs-color">d_evs</span></p>
             <div style={{ display: 'flex', alignItems: 'center' }}> 
                 <Search onChange={e => setSearchTerm(e.target.value)} width={'50ch'} height={'1ch'}/>
-                <SearchButton onClick={handleSearch} text={'Search'}/>
+                <SearchButton onClick={handleSearch} text={'Search'} style={{marginLeft: '3vh', padding: '2vh 4vw'}}/>
             </div>
         </div>
     )

@@ -72,10 +72,9 @@ body {
   margin-bottom: 20px;
   background-color: #8c1cd4;
   color: #fff;
-  padding: 13px 45px;
   border-radius: 5px;
   border: none;
-  margin-left: 15px;
+  /* margin-left: 15px; */
   cursor: pointer;
 }
 

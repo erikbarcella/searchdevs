@@ -1,8 +1,8 @@
 import React from 'react';
 
-const SearchButton = ({ onClick, text }) => {
+const SearchButton = ({ onClick, text, style }) => {
     return (
-        <button className='searchbutton' onClick={onClick}>{text}</button>
+        <button className='searchbutton' onClick={onClick} style={style}>{text}</button>
     );
 };
 
