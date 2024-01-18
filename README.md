@@ -1,3 +1,6 @@
+## Search D_evs
+Projeto desenvolvido para permitir a busca simplifica de usúarios do github e visualizar seus repositorios publicos.
+
 ### library de componentes utilizada
 Material Design
 
